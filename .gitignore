@@ -1,0 +1,9 @@
+core.Microsoft*
+core.Mongo*
+core.Python*
+env.Python
+__pycache__/
+*.py[cod]
+node_modules/
+.github/
+cloudinary_python.txt
