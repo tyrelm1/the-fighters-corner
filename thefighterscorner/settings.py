@@ -28,7 +28,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = ['8000-tyrelm1-thefighterscorn-4vhuh6x7e8d.ws-eu110.gitpod.io','.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [ "https://*8000-tyrelm1-thefighterscorn-4vhuh6x7e8d.ws-eu110.gitpod.io","https://*.herokuapp.com"]
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'posts',
+    
 ]
 
 SITE_ID = 1
@@ -71,7 +71,7 @@ ROOT_URLCONF = 'thefighterscorner.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -151,3 +151,4 @@ STORAGES = {
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
