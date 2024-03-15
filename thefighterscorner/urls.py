@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView
+from posts.views import PostListView  # Import your PostListView
 
 urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
-    path("", include("posts.urls")),
-    path("", TemplateView.as_view(template_name="base.html")),
+    path("", PostListView.as_view(), name="home"),  # Route root URL to PostListView
+    path('posts/', include("posts.urls")),  # Include posts app URLs for further routing
 ]
