@@ -16,13 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from posts.views import PostListView  # Import your PostListView
+from posts.views import PostListView 
 
 urlpatterns = [
     path("about/", include("about.urls"), name="about-urls"),
-    path("accounts/", include("allauth.urls")),
-    path('admin/', admin.site.urls),
-    path('summernote/', include('django_summernote.urls')),
-    path("", PostListView.as_view(), name="home"), 
-    path('posts/', include("posts.urls")), 
+    path("admin/", admin.site.urls),
+    path("summernote/", include("django_summernote.urls")),
+    path("", PostListView.as_view(), name="home"),
+    path("posts/", include("posts.urls")),
+    path("accounts/", include("allauth.urls")),  
 ]
