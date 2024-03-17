@@ -10,7 +10,7 @@
 /* Body Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  background-color: black;
   line-height: 1.6;
 }
 
@@ -42,22 +42,17 @@ nav ul li a {
 
 /* Main Content Styles */
 main {
-  flex:1;
   padding-top: 70px; /* Add padding to the top of the main content to prevent overlap with the fixed header */
   padding-left: 20px;
   padding-right: 20px;
 }
 
 /* Footer Styles */
-/* Footer Styles */
 footer {
   background-color: #333;
   color: #fff;
   padding: 1rem;
   text-align: center;
-  position: fixed; /* Fix the footer at the bottom of the viewport */
-  width: 100%; /* Make the footer span the entire width */
-  bottom: 0; /* Position the footer at the bottom */
 }
 
 footer ul {
@@ -73,6 +68,59 @@ footer ul li a {
   color: #fff;
   text-decoration: none;
 }
+
+/* Add form styling */
+
+/* Style input fields */
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style submit buttons */
+input[type="submit"],
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Change button color on hover */
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Style form container */
+.form-container {
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+/* Style form headings */
+.form-heading {
+  text-align: center;
+}
+
+/* Style form links */
+.form-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
 
 /* Responsive Design */
 @media only screen and (max-width: 600px) {
