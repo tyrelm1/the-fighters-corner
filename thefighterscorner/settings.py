@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['8000-tyrelm1-thefighterscorn-uqtraz2pi44.ws-eu110.gitpod.io','.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [ "https://*8000-tyrelm1-thefighterscorn-uqtraz2pi44.ws-eu110.gitpod.io","https://*.herokuapp.com"]
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_summernote',
     'posts',
+    'about',
     
 ]
 

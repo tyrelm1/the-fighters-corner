@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-4 text-center">
+      <!-- Circular container for the image -->
+      <img src="{% static 'images/aboutme.jpg' %}" class="img-fluid rounded-circle" alt="About Me" style="max-width: 200px; height: auto;" />
+    </div>
+    <div class="col-8">
+      <!-- Title goes between these h2 tags -->
+      <h2>{{ about.title }} - About Me</h2>
+      <!-- Content goes directly underneath this -->
+      <p>
+        I'm passionate about the fighting game community and decided to create this blog to share my love for fighting games with others. As a long-time member of the community, I've always been fascinated by the strategies, techniques, and stories behind each match. Through this blog, I aim to provide insightful articles, tutorials, and discussions that both newcomers and veterans of the fighting game scene can enjoy.
+      </p>
+      <p>
+        Whether you're looking for tips to improve your gameplay, news about upcoming tournaments, or simply want to connect with fellow enthusiasts, you'll find it all here at The Fighters Corner. Join me on this journey as we celebrate the spirit of competition and camaraderie within the fighting game community!
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-right">
+      <!-- Updated on field goes in here -->
+      <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+    </div>
+  </div>
+</div>
+{% endblock content %}
