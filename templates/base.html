@@ -1,11 +1,8 @@
-<!-- templates/base.html -->
-{% url 'account_login' as login_url %}
-{% url 'account_signup' as signup_url %}
-{% url 'account_logout' as logout_url %}
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +13,7 @@
   <link rel="stylesheet" href="{% static 'admin/css/dashboard.css' %}">
   <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
+
 <body>
   <header>
     <nav>
@@ -23,15 +21,17 @@
         <li><a href="{% url 'home' %}">Home</a></li>
         {% if user.is_authenticated %}
         <li class="nav-item">
-            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+          <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+            href="{% url 'account_logout' %}">Logout</a>
         </li>
         {% else %}
         <li class="nav-item">
-            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                href="{% url 'account_signup' %}">Register</a>
+          <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+            href="{% url 'account_signup' %}">Register</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+          <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+            href="{% url 'account_login' %}">Login</a>
         </li>
         {% endif %}
       </ul>
@@ -52,4 +52,5 @@
     </ul>
   </footer>
 </body>
+
 </html>
