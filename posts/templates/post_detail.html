@@ -1,10 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>{{ object.title }}</h1>
-  <p><strong>Description:</strong> {{ object.description }}</p>
-  <p><strong>Content:</strong> {{ object.content }}</p>
-  <p><strong>Created At:</strong> {{ object.created_at }}</p>
-  <a href="{% url 'post_list' %}">Back to Post List</a>
-{% endblock %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h1>{{ object.title }}</h1>
+        <p><strong>Description:</strong> {{ object.description }}</p>
+        <p><strong>Content:</strong> {{ object.content }}</p>
+        <p><strong>Created At:</strong> {{ object.created_at }}</p>
+        <hr>
 
+        <!-- Comments Section -->
+        <h2>Comments</h2>
+        {% if object.comments.all %}
+          <ul class="list-unstyled">
+            {% for comment in object.comments.all %}
+              <li class="mb-3">
+                <div class="mb-1"><strong>{{ comment.author.username }}</strong> - {{ comment.created_at }}</div>
+                <div>{{ comment.body }}</div>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>No comments yet.</p>
+        {% endif %}
+
+        <!-- Add Comment Form -->
+        <h2>Add a Comment</h2>
+        <form method="post" action="{% url 'add_comment' object.pk %}">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="comment">Your Comment:</label>
+            <textarea class="form-control" id="comment" name="body" rows="4" placeholder="Enter your comment" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <a href="{% url 'post_list' %}" class="btn btn-secondary mt-3">Back to Post List</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
