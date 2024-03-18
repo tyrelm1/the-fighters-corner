@@ -25,9 +25,10 @@
             {% for error in form.password1.errors %}
             <p class="text-danger">{{ error }}</p>
             {% endfor %}
-            <small id="passwordHelp" class="form-text text-muted">
-                Your password should be at least 8 characters long.
-            </small>
+            <div id="password-requirements" style="display: none;">
+                Password should be at least 8 characters long.
+            </div>
+            
         </div>
         <div class="form-group">
             <label for="id_password2">Confirm Password:</label>
