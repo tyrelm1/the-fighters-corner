@@ -1,13 +1,14 @@
 <!-- base.html -->
 {% load static %}
 {% url 'about' as about_url %}
+{% url 'events' as events_url %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fighting Game Corner</title>
+  <title>The Fighters Corner</title>
   <!-- Link to additional CSS files -->
   <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
@@ -15,10 +16,10 @@
 <body>
   <header>
     <nav>
-      <h1> The Fighters Corner</h1>
+      <h1>The Fighters Corner</h1>
       <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
-        
+        <li><a href="{% url 'event_list' %}">Events</a></li> <!-- Added link to events -->
         <li class="nav-item"><a class="nav-link
             {% if request.path == about_url %}active{%endif%}" aria-current="page" href="{% url 'about' %}">About</a>
         </li>
@@ -56,5 +57,5 @@
     </ul>
   </footer>
 </body>
-<script src="static/script.js"></script>
+<script src="{% static 'script.js' %}"></script> <!-- Include script.js -->
 </html>

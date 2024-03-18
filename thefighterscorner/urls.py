@@ -25,4 +25,5 @@ urlpatterns = [
     path("", PostListView.as_view(), name="home"),
     path("posts/", include("posts.urls")),
     path("accounts/", include("allauth.urls")),  
+    path('', include('events.urls')),
 ]
