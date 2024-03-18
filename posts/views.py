@@ -16,23 +16,25 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     model = Post
     template_name = "post_form.html"
-    fields = ['title', 'content']  # Specify the fields to include in the form
+    fields = ['title', 'content']
 
 class PostUpdateView(UpdateView):
     model = Post
     template_name = "post_form.html"
-    fields = ['title', 'content']  # Specify the fields to include in the form
+    fields = ['title', 'content']
 
 class PostDeleteView(DeleteView):
     model = Post
     template_name = "post_confirm_delete.html"
-    success_url = reverse_lazy('post_list')  # Redirect to post list upon successful deletion
+    success_url = reverse_lazy('post_list')
 
 @login_required
 def add_comment(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    comment = None
     if request.method == 'POST':
-        form = CommentForm(request.POST)
+        comment = post.comments.filter(author=request.user).first()
+        form = CommentForm(request.POST, instance=comment)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
@@ -40,6 +42,26 @@ def add_comment(request, pk):
             comment.save()
             return redirect('post_detail', pk=pk)
     else:
-        form = CommentForm()
+        form = CommentForm(instance=comment)
     return redirect('post_detail', pk=pk)
 
+@login_required
+def comment_edit(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            return redirect('post_detail', pk=comment.post.pk)
+    else:
+        form = CommentForm(instance=comment)
+    return render(request, 'comment_edit.html', {'form': form})
+
+@login_required
+def comment_delete(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    post_pk = comment.post.pk
+    if request.method == 'POST':
+        comment.delete()
+        return redirect('post_detail', pk=post_pk)
+    return render(request, 'comment_delete.html', {'comment': comment})

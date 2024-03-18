@@ -1,9 +1,12 @@
+# urls.py
+
 from django.urls import path
 from .views import (
     PostListView, PostDetailView, PostCreateView,
-    PostUpdateView, PostDeleteView, add_comment
+    PostUpdateView, PostDeleteView, add_comment,
+    comment_edit, comment_delete
 )
-from accounts.views import signup_view  # Import the signup view from accounts app
+from accounts.views import signup_view 
 
 urlpatterns = [
     path('', PostListView.as_view(), name='post_list'),
@@ -12,5 +15,7 @@ urlpatterns = [
     path('post/<int:pk>/comment/', add_comment, name='add_comment'),
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post_update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post_delete'),
+     path('comment/<int:pk>/edit/', comment_edit, name='edit_comment'),  # Add this line
+    path('comment/<int:pk>/delete/', comment_delete, name='delete_comment'),  # Add this line
     path('signup/', signup_view, name='signup'),  
 ]

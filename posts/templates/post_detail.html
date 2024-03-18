@@ -18,6 +18,10 @@
               <li class="mb-3">
                 <div class="mb-1"><strong>{{ comment.author.username }}</strong> - {{ comment.created_at }}</div>
                 <div>{{ comment.body }}</div>
+                {% if user.is_authenticated and user == comment.author %}
+                  <a href="{% url 'edit_comment' comment.pk %}" class="btn btn-sm btn-primary">Edit</a>
+                  <a href="{% url 'delete_comment' comment.pk %}" class="btn btn-sm btn-danger">Delete</a>
+                {% endif %}
               </li>
             {% endfor %}
           </ul>
