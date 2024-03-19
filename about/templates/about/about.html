@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
+
 {% block content %}
 {% load static %}
 <div class="container mt-5">
   <div class="row">
-    <div class="col-4 text-center">
+    <div class="col-md-4 d-flex justify-content-center align-items-center">
       <!-- Circular container for the image -->
-      <img src="{% static 'images/aboutme.jpg' %}" class="img-fluid rounded-circle" alt="About Me" style="max-width: 200px; height: auto;" />
+      <div class="rounded-circle overflow-hidden about-me-image">
+        <img src="{% static 'images/aboutme.jpg' %}" class="about-me-image" alt="About Me Image" style="max-width: 100%; height: auto;">
+      </div>
     </div>
-    <div class="col-8">
+    <div class="col-md-8 about-me-main-content">
       <!-- Title goes between these h2 tags -->
       <h2>{{ about.title }} - About Me</h2>
       <!-- Content goes directly underneath this -->
@@ -20,7 +23,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col text-right">
+    <div class="col text-end">
       <!-- Updated on field goes in here -->
       <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
     </div>

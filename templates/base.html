@@ -9,53 +9,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Fighters Corner</title>
-  <!-- Link to additional CSS files -->
   <link rel="stylesheet" href="{% static 'style.css' %}">
+  <!-- Link to additional CSS files -->
 </head>
 
 <body>
   <header>
-    <nav>
+    <div class="container">
       <h1>The Fighters Corner</h1>
-      <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'event_list' %}">Events</a></li> <!-- Added link to events -->
-        <li class="nav-item"><a class="nav-link
-            {% if request.path == about_url %}active{%endif%}" aria-current="page" href="{% url 'about' %}">About</a>
-        </li>
-        {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-            href="{% url 'account_logout' %}">Logout</a>
-        </li>
-        {% else %}
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-            href="{% url 'account_signup' %}">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-            href="{% url 'account_login' %}">Login</a>
-        </li>
-        {% endif %}
-      </ul>
-    </nav>
+      <nav>
+        <ul>
+          <li><a href="{% url 'post_list' %}">Home</a></li>
+          <li><a href="{% url 'event_list' %}">Events</a></li>
+          <li><a href="{% url 'about' %}" class="{% if request.path == about_url %}active{% endif %}">About</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'account_logout' %}">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'account_signup' %}">Register</a></li>
+          <li><a href="{% url 'account_login' %}">Login</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    {% block content %}
-    <!-- Content Goes Here -->
-    {% endblock %}
+    <section class="main-content">
+      <div class="container">
+        {% block content %}
+        <!-- Content Goes Here -->
+        {% endblock %}
+      </div>
+    </section>
   </main>
 
   <footer>
-    <ul>
-      <li><a href="https://twitter.com/YourTwitter">Twitter</a></li>
-      <li><a href="https://facebook.com/YourFacebook">Facebook</a></li>
-      <li><a href="https://instagram.com/YourInstagram">Instagram</a></li>
-      <li><a href="https://twitch.com">Twitch</a></li>
-    </ul>
+    <div class="container">
+      <ul>
+        <li><a href="https://twitter.com/YourTwitter">Twitter</a></li>
+        <li><a href="https://facebook.com/YourFacebook">Facebook</a></li>
+        <li><a href="https://instagram.com/YourInstagram">Instagram</a></li>
+        <li><a href="https://twitch.com">Twitch</a></li>
+      </ul>
+    </div>
   </footer>
+
+  <script src="{% static 'script.js' %}"></script> <!-- Include script.js -->
 </body>
-<script src="{% static 'script.js' %}"></script> <!-- Include script.js -->
+
 </html>
