@@ -4,10 +4,21 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.urls import reverse_lazy
 from .models import Post, Comment
 from .forms import CommentForm
+from django.core.paginator import Paginator
 
 class PostListView(ListView):
     model = Post
     template_name = "post_list.html"
+    context_object_name = 'posts'  # Optional: specify the context object name
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        posts = context['posts']
+        paginator = Paginator(posts, 3)  # Show 3 posts per page
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context['page_obj'] = page_obj
+        return context
 
 class PostDetailView(DetailView):
     model = Post

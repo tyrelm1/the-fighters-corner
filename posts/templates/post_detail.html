@@ -6,7 +6,9 @@
       <div class="col-md-8 offset-md-2">
         <h1>{{ object.title }}</h1>
         <p><strong>Description:</strong> {{ object.description }}</p>
-        <p><strong>Content:</strong> {{ object.content }}</p>
+        <div class="content">
+          <strong>Content:</strong> {{ object.content | safe }}
+        </div>
         <p><strong>Created At:</strong> {{ object.created_at }}</p>
         <hr>
 
