@@ -15,6 +15,7 @@ urlpatterns = [
     path("summernote/", include("django_summernote.urls")),
     path("", PostListView.as_view(), name="home"),
     path("posts/", include("posts.urls")),
+    path("accounts/", signup_view, name="account_signup"),
     path("accounts/", include("allauth.urls")),  
     path('events/', include('events.urls')),  
 ]

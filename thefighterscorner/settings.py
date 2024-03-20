@@ -50,8 +50,12 @@ INSTALLED_APPS = [
     'posts',
     'about',
     'events',
+    'crispy_forms',
     
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'

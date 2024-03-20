@@ -9,16 +9,11 @@
     <!-- RSVP form -->
     <form id="rsvpForm" method="post">
         {% csrf_token %}
-        <label for="attending">Are you attending?</label>
-        <select name="attending" id="attending">
-            <option value="True">Yes</option>
-            <option value="False">No</option>
-        </select>
+        {{ form.as_p }}
         <button type="submit">Submit RSVP</button>
     </form>
     <!-- End of RSVP form -->
     
     <a href="{% url 'event_list' %}">Back to Event List</a>
 
-</body>
 {% endblock %}

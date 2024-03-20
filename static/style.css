@@ -94,49 +94,75 @@ footer ul li a {
   text-decoration: none;
 }
 
-/* Add form styling */
-.signup-form {
-  max-width: 400px;
+/* Form container styling */
+.form-container {
+  max-width: 400px; /* Adjust max-width as needed */
   margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
+  margin-top: 50px; /* Add space above the form container */
 }
 
-.signup-form h2 {
+/* Form header styling */
+.form-container .form-header {
   text-align: center;
+  margin-bottom: 20px; /* Adjust margin bottom as needed */
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
+/* Form label styling */
+.form-container .form-label {
   display: block;
-  font-weight: bold;
+  margin-bottom: 5px; /* Adjust margin bottom as needed */
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="password"] {
+/* Form input styling */
+.form-container .form-input {
   width: 100%;
   padding: 10px;
+  margin-bottom: 15px; /* Adjust margin bottom as needed */
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.btn-primary {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
+/* Form input focus effect */
+.form-container .form-input:focus {
+  border-color: #007bff; /* Change border color on focus */
+}
+
+/* Error message styling */
+.text-danger {
+  color: #dc3545; /* Error message color */
+  font-size: 0.85em; /* Adjust font size as needed */
+}
+
+/* Placeholder text styling */
+.form-container .form-input::placeholder {
+  color: #999; /* Placeholder text color */
+}
+
+/* Submit button styling */
+.form-container .form-btn {
+  width: 100%;
+  padding: 10px;
   border: none;
   border-radius: 5px;
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Button text color */
   cursor: pointer;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
+/* Submit button hover effect */
+.form-container .form-btn:hover {
+  background-color: #0056b3; /* Button hover color */
+  transform: translateY(-1px); /* Move button up slightly on hover */
+}
+
+/* Button disabled state styling */
+.form-container .form-btn[disabled] {
+  background-color: #ccc; /* Disabled button color */
+  cursor: not-allowed; /* Change cursor on disabled state */
 }
 
 /* Responsive Design */
