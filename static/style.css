@@ -9,15 +9,16 @@
 
 /* Body Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5; /* Light gray background color */
+  font-family: 'Literata', sans-serif; /* Use Literata for generic text */
+  background-color: #000505; /* Dark gray background color */
   line-height: 1.6;
 }
 
 /* Header Styles */
 header {
-  background-color: rgba(40, 40, 40, 0.9); /* Dark gray background color with slight transparency */
-  color: white; /* White text color */
+  background-color: rgba(59, 51, 68, 0.5);
+  /* Dark gray background color with slight transparency */
+  color: #BFCFE0; /* Light gray text color */
   padding: 20px 0; /* Adjusted padding */
   position: fixed;
   width: 100%;
@@ -26,20 +27,19 @@ header {
 .landing-image {
   background-image: url('images/arcade.jpg');
   background-size: cover;
-  background-position: center center; /* Center the background image both vertically and horizontally */
+  background-position: center;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 40vh;
   z-index: -1;
 }
-
 
 /* Navigation Styles */
 nav ul {
   list-style: none;
-  text-align: center; /* Center-align the navigation links */
+  text-align: right; /* Right-align the navigation links */
 }
 
 nav ul li {
@@ -63,10 +63,67 @@ main {
   padding-left: 20px;
   padding-right: 20px;
 }
+.main-title{
+  text-align: center;
+  color: #BFCFE0;
+  font-family: 'Bowlby One SC', sans-serif; /* Use Bowlby One SC for titles */
+}
+/*postlist container styles*/
+.blog-list-header{
+  text-align: center;
+  color: #BFCFE0;
+}
+.post-list-container{
+  background-color: rgba(40, 40, 40, 0.7);
+}
+.card-transparent {
+  background-color: rgba(40, 40, 40, 0.6); /* Slightly transparent white background color */
+}
+.card-title{
+  color: #BFCFE0;
+}
+/*post-detail styles*/
+
+.post-detail-container,
+.comment-form-container {
+  background-color: rgba(40, 40, 40, 0.9); /* Slightly transparent white background color */
+  padding: 0px;
+  border-radius: 10px; /* Add rounded corners for better aesthetics */
+  margin-bottom: 100px; /* Add some margin between containers */
+  max-width: 600px; /* Adjust the max-width as per your preference */
+  margin: 0 auto; /* Center align the container */
+}
+
+
+/* About Container Styles */
+.about-container {
+    margin-top: -70px;
+    background-color: rgba(59, 51, 68, 0.4);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.about-me-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-me-title{
+  text-align: center;
+}
+
+.about-me-main-content {
+  margin-top: 20px;
+  color:#BFCDE0 /* Add space between the image and the text */
+}
+
+.updated-on {
+  margin-top: -50px;
+}
 
 /* Footer Styles */
 footer {
-  background-color: rgba(40, 40, 40, 0.9); /* Dark gray background color with slight transparency */
+  background-color: rgba(59, 51, 68, 0.5);
   color: #fff;
   padding: 20px;
   text-align: center;
