@@ -1,20 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Event List</title>
-</head>
-<body>
+
+{% block content %}
     <h1>Event List</h1>
     <ul>
-        {% for event in events %}
-            <li>
-                <a href="{% url 'event_detail' event.id %}">{{ event.title }}</a>
-                <!-- Add RSVP status here if needed -->
-            </li>
-        {% endfor %}
+        {% if events %}
+            {% for event in events %}
+                <li>
+                    <a href="{% url 'event_detail' event.id %}">{{ event.title }}</a>
+                    <!-- Display RSVP status -->
+                    {% if event.rsvp %}
+                        {% if event.rsvp.rsvp_status %}
+                            <span style="color: green;">Attending</span>
+                        {% else %}
+                            <span style="color: red;">Not Attending</span>
+                        {% endif %}
+                    {% else %}
+                        <span>No RSVP</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        {% else %}
+            <p>No events available at the moment.</p>
+        {% endif %}
     </ul>
-</body>
-</html>
+{% endblock %}

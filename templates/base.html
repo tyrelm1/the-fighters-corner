@@ -1,5 +1,6 @@
 <!-- base.html -->
 {% load static %}
+{% url 'about' as posts_url %}
 {% url 'about' as about_url %}
 {% url 'events' as events_url %}
 <!DOCTYPE html>
@@ -31,7 +32,8 @@
         </ul>
       </nav>
     </div>
-  </header>
+</header>
+
 
   <main>
     <section class="main-content">

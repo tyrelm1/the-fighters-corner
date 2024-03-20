@@ -1,17 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ event.title }}</title>
-</head>
-<body>
+
+{% block content %}
     <h1>{{ event.title }}</h1>
     <p><strong>Date:</strong> {{ event.date }}</p>
     <p><strong>Description:</strong> {{ event.description }}</p>
+    
     <!-- RSVP form -->
-    <form method="post">
+    <form id="rsvpForm" method="post">
         {% csrf_token %}
         <label for="attending">Are you attending?</label>
         <select name="attending" id="attending">
@@ -21,6 +17,8 @@
         <button type="submit">Submit RSVP</button>
     </form>
     <!-- End of RSVP form -->
+    
     <a href="{% url 'event_list' %}">Back to Event List</a>
+
 </body>
-</html>
+{% endblock %}

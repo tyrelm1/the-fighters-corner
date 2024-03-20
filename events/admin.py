@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Event, RSVP
+from .models import Event, RSVP  # Import the RSVP model
 
 class EventAdmin(admin.ModelAdmin):
     list_display = ('title', 'date', 'location')  
@@ -7,5 +7,5 @@ class EventAdmin(admin.ModelAdmin):
     list_filter = ('date',)  
     prepopulated_fields = {'slug': ('title',)}  
 
-admin.site.register(Event)
-admin.site.register(RSVP)
+admin.site.register(Event, EventAdmin)  # Register the Event model with the custom admin class
+admin.site.register(RSVP)  # Register the RSVP model

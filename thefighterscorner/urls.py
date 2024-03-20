@@ -11,10 +11,10 @@ from events.views import event_list, event_detail  # Import views from the event
 
 urlpatterns = [
     path("about/", include("about.urls"), name="about-urls"),
-    path("admin/", admin.site.urls),  # Include admin.site.urls
+    path("admin/", admin.site.urls),  
     path("summernote/", include("django_summernote.urls")),
     path("", PostListView.as_view(), name="home"),
     path("posts/", include("posts.urls")),
     path("accounts/", include("allauth.urls")),  
-    path('events/', include('events.urls')),  # Include events app URLs with 'events/' prefix
+    path('events/', include('events.urls')),  
 ]

@@ -12,14 +12,11 @@
     </div>
     <div class="col-md-8 about-me-main-content">
       <!-- Title goes between these h2 tags -->
-      <h2>{{ about.title }} - About Me</h2>
+      <h2>{{ about.title }}</h2>
       <!-- Content goes directly underneath this -->
-      <p>
-        I'm passionate about the fighting game community and decided to create this blog to share my love for fighting games with others. As a long-time member of the community, I've always been fascinated by the strategies, techniques, and stories behind each match. Through this blog, I aim to provide insightful articles, tutorials, and discussions that both newcomers and veterans of the fighting game scene can enjoy.
-      </p>
-      <p>
-        Whether you're looking for tips to improve your gameplay, news about upcoming tournaments, or simply want to connect with fellow enthusiasts, you'll find it all here at The Fighters Corner. Join me on this journey as we celebrate the spirit of competition and camaraderie within the fighting game community!
-      </p>
+      <article>
+        {{ about.content | safe }}
+      </article>
     </div>
   </div>
   <div class="row">
