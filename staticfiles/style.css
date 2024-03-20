@@ -1,159 +1,43 @@
-/* Static/css/base.css */
-
-/* Reset CSS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body Styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5; /* Changed background color to light gray */
-  line-height: 1.6;
-}
+/* custom.css */
 
 /* Header Styles */
-header {
-  background-color: #333; /* Changed background color to dark gray */
-  color: white; /* Changed text color to white */
-  padding: 0px;
+.header {
+  background-image: url('static/images/arcade.jpg'); /* Replace 'path/to/your/image.jpg' with the path to your image */
+  background-size: cover;
+  background-position: center;
   position: fixed;
   width: 100%;
   z-index: 1000;
+  padding: 20px 0; /* Adjust padding as needed */
+  opacity: 0.9; /* Adjust opacity to make the header slightly transparent */
 }
 
-/* Navigation Styles */
-nav ul {
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Adjust padding as needed */
+}
+
+.header h1 {
+  color: white; /* Set header text color */
+  font-size: 24px; /* Adjust header font size */
+}
+
+.navbar ul {
   list-style: none;
-  text-align: center; /* Center-align the navigation links */
 }
 
-nav ul li {
+.navbar ul li {
   display: inline-block;
   margin-left: 20px;
 }
 
-nav ul li a {
-  color: white;
+.navbar ul li a {
+  color: white; /* Set link color */
   text-decoration: none;
 }
 
-nav ul li a.active {
-  /* Add styles for active link */
+.navbar ul li a.active {
   font-weight: bold;
-}
-
-/* Main Content Styles */
-main {
-  padding-top: 80px; /* Increase padding to accommodate the fixed header */
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* Adjust the main content position for the about page */
-.about-me-main-content {
-  padding-left: 16rem; /* Adjust as needed */
-}
-
-/* Styles for the image */
-.about-me-image {
-  margin-top: 100px;
-  max-width: 88px;
-}
-
-/* Article Styles */
-.about-me-main-content article {
-  padding-left: 20px; /* Add padding to the left of the article */
-}
-
-/* Footer Styles */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-footer ul {
-  list-style: none;
-}
-
-footer ul li {
-  display: inline;
-  margin-right: 10px;
-}
-
-footer ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Form container styling */
-.form-container {
-  max-width: 400px; /* Adjust max-width as needed */
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-/* Form header styling */
-.form-container .form-header {
-  text-align: center;
-  margin-bottom: 20px; /* Adjust margin bottom as needed */
-}
-
-/* Form label styling */
-.form-container .form-label {
-  display: block;
-  margin-bottom: 5px; /* Adjust margin bottom as needed */
-}
-
-/* Form input styling */
-.form-container .form-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px; /* Adjust margin bottom as needed */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-/* Submit button styling */
-.form-container .form-btn {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff; /* Button color */
-  color: #fff; /* Button text color */
-  cursor: pointer;
-}
-
-/* Submit button hover effect */
-.form-container .form-btn:hover {
-  background-color: #0056b3; /* Button hover color */
-}
-
-
-/* Responsive Design */
-@media only screen and (max-width: 600px) {
-  /* For small devices like mobile phones */
-  nav ul li {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  /* Responsive adjustments for the image */
-  .about-me-image {
-    margin-top: 20px; /* Adjusted margin */
-    max-width: 200px; /* Adjusted max-width */
-    width: 100%; /* Ensure image fills the container */
-  }
 }
