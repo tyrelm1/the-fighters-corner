@@ -42,10 +42,8 @@ class PostDeleteView(DeleteView):
 @login_required
 def add_comment(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    comment = None
     if request.method == 'POST':
-        comment = post.comments.filter(author=request.user).first()
-        form = CommentForm(request.POST, instance=comment)
+        form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
@@ -53,8 +51,9 @@ def add_comment(request, pk):
             comment.save()
             return redirect('post_detail', pk=pk)
     else:
-        form = CommentForm(instance=comment)
-    return redirect('post_detail', pk=pk)
+        form = CommentForm()
+    return render(request, 'add_comment.html', {'form': form, 'post': post})
+
 
 @login_required
 def comment_edit(request, pk):
