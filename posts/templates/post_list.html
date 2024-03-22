@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 <div class="post-list-container">
   <h1 class="blog-list-header">Blog List</h1>
@@ -8,11 +8,21 @@
     <div class="col-md-4">
       <div class="card mb-4 card-transparent"> <!-- Add the card-transparent class here -->
         <div class="card-body">
-          <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-          <p class="card-text">{{ post.description }}</p>
+          <div class="image-container">
+            {% if "placeholder" in post.featured_image.url %}
+            <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+              alt="placeholder image" style="width: 100%; height: auto;">
+            {% else %}
+            <img class="card-img-top" src="{{ post.featured_image.url }}"
+              alt="{{ post.title }}" style="width: 100%; height: auto;">
+            {% endif %}
+            <div class="image-flash">
+              <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+              <p class="card-text">{{ post.description }}</p>
+            </div>
+          </div>
         </div>
       </div>
-      
     </div>
     {% endfor %}
   </div>
