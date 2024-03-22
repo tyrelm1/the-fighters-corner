@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import redirect, get_object_or_404, render
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -49,6 +50,7 @@ def add_comment(request, pk):
             comment.post = post
             comment.author = request.user
             comment.save()
+            messages.success(request, 'Your comment has been added successfully!')
             return redirect('post_detail', pk=pk)
     else:
         form = CommentForm()
@@ -62,6 +64,7 @@ def comment_edit(request, pk):
         form = CommentForm(request.POST, instance=comment)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Your comment has been edited successfully!')
             return redirect('post_detail', pk=comment.post.pk)
     else:
         form = CommentForm(instance=comment)
@@ -73,5 +76,6 @@ def comment_delete(request, pk):
     post_pk = comment.post.pk
     if request.method == 'POST':
         comment.delete()
+        messages.success(request, 'Your comment has been deleted successfully!')
         return redirect('post_detail', pk=post_pk)
     return render(request, 'comment_delete.html', {'comment': comment})

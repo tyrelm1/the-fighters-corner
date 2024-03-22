@@ -27,3 +27,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Function to display alert message for comment actions
+function showCommentAlert(action) {
+    alert('Your comment has been ' + action + ' successfully!');
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Add event listener for comment edit form submission
+    var commentEditForm = document.getElementById('comment_edit_form');
+    if (commentEditForm) {
+        commentEditForm.addEventListener('submit', function() {
+            showCommentAlert('edited'); // Call showCommentAlert function when the form is submitted
+        });
+    }
+
+    // Add event listener for comment delete form submission
+    var commentDeleteForm = document.getElementById('comment_delete_form');
+    if (commentDeleteForm) {
+        commentDeleteForm.addEventListener('submit', function() {
+            showCommentAlert('deleted'); // Call showCommentAlert function when the form is submitted
+        });
+    }
+});

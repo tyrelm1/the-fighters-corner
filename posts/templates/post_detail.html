@@ -6,7 +6,7 @@
     <div class="col-md-8">
       <div class="post-detail-container"> <!-- Add container for post detail -->
         <h1>{{ object.title }}</h1>
-        <p><strong>Description:</strong> {{ object.description }}</p>
+        <p><strong>Description:</strong> <span class="description">{{ object.description }}</span></p>
         <div class="content">
           <strong>Content:</strong> {{ object.content | safe }}
         </div>
@@ -17,12 +17,12 @@
     
     <!-- Move Comments Section to Right Column -->
     <div class="col-md-4">
-      <div class="post-detail-container"> <!-- Add container for comments -->
+      <div class="comments-container"> <!-- Add container for comments -->
         <h2>Comments</h2>
         {% if object.comments.all %}
-          <ul class="list-unstyled">
+          <ul class="list-unstyled comments-list">
             {% for comment in object.comments.all %}
-              <li class="mb-3">
+              <li class="mb-3 comment">
                 <div class="mb-1"><strong>{{ comment.author.username }}</strong> - {{ comment.created_at }}</div>
                 <div>{{ comment.body }}</div>
                 {% if user.is_authenticated and user == comment.author %}
@@ -33,7 +33,7 @@
             {% endfor %}
           </ul>
         {% else %}
-          <p>No comments yet.</p>
+          <p class="no-comments-message">No comments yet.</p>
         {% endif %}
       
         <!-- Add Comment Form -->
@@ -42,7 +42,7 @@
           <form method="post" action="{% url 'add_comment' object.pk %}">
             {% csrf_token %}
             <div class="mb-3">
-              <label for="comment">Your Comment:</label>
+              <label for="comment" class="your-comment-label">Your Comment:</label>
               <textarea class="form-control" id="comment" name="body" rows="4" placeholder="Enter your comment" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -51,7 +51,7 @@
         
         <!-- Back to Post List Button -->
         <a href="{% url 'post_list' %}" class="btn btn-secondary mt-3">Back to Post List</a>
-      </div> <!-- End of post-detail-container -->
+      </div> <!-- End of comments-container -->
     </div>
   </div>
 </div>

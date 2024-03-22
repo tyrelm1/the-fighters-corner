@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="edit-comment-alert alert alert-success" style="display: none;">
+  Your comment has been edited successfully!
+</div>
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
         <h2>Edit Comment</h2>
-        <form method="post">
+        <form method="post" id="comment_edit_form">
           {% csrf_token %}
           {{ form.as_p }}
           <button type="submit" class="btn btn-primary">Update Comment</button>
