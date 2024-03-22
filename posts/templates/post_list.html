@@ -10,7 +10,7 @@
         <div class="card-body">
           <div class="image-container">
             {% if "placeholder" in post.featured_image.url %}
-            <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+            <img class="card-img-top" src="{% static 'images/arcadestick.webp' %}"
               alt="placeholder image" style="width: 100%; height: auto;">
             {% else %}
             <img class="card-img-top" src="{{ post.featured_image.url }}"

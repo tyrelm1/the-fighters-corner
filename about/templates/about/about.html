@@ -4,31 +4,28 @@
 {% load static %}
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-12">
-      <div class="about-container"> <!-- New container for text and image -->
-        <div class="row">
-          <div class="col-md-4 d-flex justify-content-center align-items-center">
-            <!-- Circular container for the image -->
-            <div class="rounded-circle overflow-hidden about-me-image">
-              <img src="{% static 'images/aboutme.jpg' %}" class="about-me-image" alt="About Me Image" style="max-width: 100%; height: auto;">
-            </div>
-          </div>
-          <div class="col-md-8 about-me-main-content">
-            <!-- Title goes between these h2 tags -->
-            <h2 class="about-me-title">{{ about.title }}</h2>
-            <!-- Content goes directly underneath this -->
-            <article>
-              {{ about.content | safe }}
-            </article>
-          </div>
-        </div>
+    <div class="col-md-4">
+      <div class="about-container"> <!-- Container for the image -->
+        {% if "placeholder" in about.profile_image.url %}
+        <img src="{% static 'images/aboutme.webp' %}" width="100%"
+          alt="placeholder image" >
+        {% else %}
+        <img src="{{ about.profile_image.url }}" width="100%"
+          alt="{{ about.title }}">
+        {% endif %}
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col text-end">
-      <!-- Updated on field goes in here -->
-      <p class="updated-on"><em>Updated on: {{ about.updated_on }}</em></p>
+    <div class="col-md-8">
+      <div class="about-me-main-content">
+        <!-- Title goes between these h2 tags -->
+        <h2 class="about-me-title">{{ about.title }}</h2>
+        <!-- Content goes directly underneath this -->
+        <article>
+          {{ about.content | safe }}
+        </article>
+        <!-- Updated on field goes in here -->
+        <p class="updated-on"><em>Updated on: {{ about.updated_on }}</em></p>
+      </div>
     </div>
   </div>
 </div>
