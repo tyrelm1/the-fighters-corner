@@ -2,18 +2,21 @@
 {% load static %}
 
 {% block content %}
+<div class="rsvp-container">
     <h1>{{ event.title }}</h1>
     <p><strong>Date:</strong> {{ event.date }}</p>
     <p><strong>Description:</strong> {{ event.description }}</p>
     
-    <!-- RSVP form -->
-    <form id="rsvpForm" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit RSVP</button>
-    </form>
-    <!-- End of RSVP form -->
+    <!-- Container for RSVP form -->
+    <div class="rsvp-form-container">
+        <form id="rsvpForm" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit RSVP</button>
+        </form>
+    </div>
+    <!-- End of RSVP form container -->
     
-    <a href="{% url 'event_list' %}">Back to Event List</a>
-
+    <a href="{% url 'event_list' %}" class="btn btn-secondary">Back to Event List</a>
+</div>
 {% endblock %}

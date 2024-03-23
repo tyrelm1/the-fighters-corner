@@ -163,8 +163,12 @@ main {
 
 /*postlist container styles*/
 .blog-list-header {
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
   text-align: center;
-  color: rgba(59, 51, 68, 0.3); /* Dark purple text color */
 }
 
 .post-list-container {
@@ -273,8 +277,13 @@ color: #BFCFE0;
   background-color: rgba(59, 51, 68, 0.8); /* Slightly transparent dark purple background color */
 }
 
+.card{
+  background-color: rgba(59, 51, 68, 0.8);
+}
+
 .card-title {
   color: #BFCFE0; /* White text color */
+  background-color: rgba(59, 51, 68, 0.8);
 }
 
 .card-body {
@@ -291,6 +300,34 @@ border:none
   color: red; /* Change the hyperlink color on hover */
 }
 
+/*event styling*/
+.rsvp-form-container{
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.rsvp-container {
+
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.event-list-header
+{
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 /* Footer Styles */
 footer {

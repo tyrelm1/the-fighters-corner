@@ -2,26 +2,47 @@
 {% load static %}
 
 {% block content %}
-    <h1>Event List</h1>
-    <ul>
-        {% if events %}
-            {% for event in events %}
-                <li>
-                    <a href="{% url 'event_detail' event.id %}">{{ event.title }}</a>
-                    <!-- Display RSVP status -->
-                    {% if event.rsvp %}
-                        {% if event.rsvp.rsvp_status %}
-                            <span style="color: green;">Attending</span>
-                        {% else %}
-                            <span style="color: red;">Not Attending</span>
-                        {% endif %}
+<div class="container mt-5">
+  <h1 class="event-list-header">Event List</h1>
+  <div class="row">
+    {% if events %}
+      {% for event in events %}
+        <div class="col-md-2 mb-3">
+          <div class="card" style="width: 100%;">
+            <div class="image-container">
+              {% if "placeholder" in event.featured_image.url %}
+              <img class="card-img-top" src="{% static 'images/nights.webp' %}"
+                alt="placeholder image">
+              {% else %}
+              <img class="card-img-top" src=" {{ event.featured_image.url }}"
+                alt="{{ event.title }}">
+              {% endif %}
+              <div class="image-flash">
+                <h2 class="card-title"><a href="{% url 'event_detail' event.id %}">{{ event.title }}</a></h2>
+                <!-- Display RSVP status -->
+                <div class="rsvp-status">
+                  {% if event.rsvp %}
+                    {% if event.rsvp.rsvp_status %}
+                      <span class="attending">Attending</span>
                     {% else %}
-                        <span>No RSVP</span>
+                      <span class="not-attending">Not Attending</span>
                     {% endif %}
-                </li>
-            {% endfor %}
-        {% else %}
-            <p>No events available at the moment.</p>
-        {% endif %}
-    </ul>
+                  {% endif %}
+                  <!-- Hide "Not Responded" section if there's no RSVP -->
+                  {% if event.rsvp and not event.rsvp.rsvp_status %}
+                    <span class="not-responded">Not Responded</span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="col-md-12">
+        <p>No events available at the moment.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
 {% endblock %}

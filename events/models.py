@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from cloudinary.models import CloudinaryField
 
 class Event(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     date = models.DateField()
+    featured_image = CloudinaryField('image', default='placeholder')
     location = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
 
