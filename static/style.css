@@ -13,7 +13,7 @@ body {
   font-family: 'Literata', sans-serif; /* Use Literata for generic text */
   background-color: black; /* Light gray background color */
   line-height: 1.6;
-  color: #1a1a1a; /* Dark gray text color */
+  color: #BFCFE0
 }
 
 /* Header Styles */
@@ -57,28 +57,8 @@ nav ul li a.active {
   font-weight: bold;
 }
 
-/* Social Icons Styles */
-header .social-icons {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
 
-header .social-icons li {
-  display: inline-block;
-  margin-right: 10px;
-}
 
-header .social-icons li a {
-  color: #ffffff; /* White text color */
-  text-decoration: none;
-  font-size: 20px;
-}
-
-/* Hover Effect */
-header .social-icons li a:hover {
-  color: red; /* Change color to red on hover */
-}
 
 /* Event Name Hyperlink Styles */
 .image-flash .card-title a {
