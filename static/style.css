@@ -38,7 +38,6 @@ header {
   z-index: -1;
 }
 
-/* Navigation Styles */
 nav ul {
   list-style: none;
   text-align: right; /* Right-align the navigation links */
@@ -56,6 +55,29 @@ nav ul li a {
 
 nav ul li a.active {
   font-weight: bold;
+}
+
+/* Social Icons Styles */
+header .social-icons {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+header .social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+header .social-icons li a {
+  color: #ffffff; /* White text color */
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Hover Effect */
+header .social-icons li a:hover {
+  color: red; /* Change color to red on hover */
 }
 
 /* Event Name Hyperlink Styles */
@@ -161,11 +183,14 @@ nav ul li a.active {
 
 
 /* Main Content Styles */
+/* Main Content Styles */
 main {
   padding-top: 110px; /* Increased padding to accommodate the fixed header and make space for landing page image */
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 70px; /* Adjusted padding to accommodate the fixed footer */
 }
+
 
 .main-title {
   text-align: center;
@@ -392,45 +417,61 @@ border:none
 }
 
 /* Footer Styles */
-footer {
-  background-color: #3b3444; /* Dark purple background color */
-  color: #ffffff; /* White text color */
-  padding: 20px;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
 
-footer ul {
-  list-style: none;
-}
-
-footer ul li {
-  display: inline;
-  margin-right: 10px;
-}
-
-footer ul li a {
-  color: #ffffff; /* White text color */
-  text-decoration: none;
-}
-
-/* Responsive Design */
-@media only screen and (max-width: 600px) {
-  /* For small devices like mobile phones */
-  nav ul li {
-    display: block;
-    margin-bottom: 10px;
+  /* Footer Styles */
+  footer {
+    background-color: rgba(59, 51, 68, 0.5); /* Dark purple background color */
+    color: #ffffff; /* White text color */
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
   }
-}
-  
-/* Additional Media Queries for Tablet and Larger Screens */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-  /* For tablets and larger screens */
-  /* Adjust styles accordingly */
-}
 
-/* Cross-browser Compatibility */
-/* Ensure compatibility by testing on various browsers */
+  footer .social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; /* Horizontally center the icons */
+  }
+
+  footer .social-icons li {
+    margin-right: 10px; /* Adjust spacing between icons */
+  }
+
+  footer .social-icons li:last-child {
+    margin-right: 0; /* Remove margin from the last icon */
+  }
+
+  footer .social-icons li a {
+    color: #ffffff; /* White text color */
+    text-decoration: none;
+    font-size: 24px; /* Adjust icon size */
+  }
+
+
+  /* Social Icons Styles */
+  footer ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  footer ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  footer ul li a {
+    color: #ffffff; /* White text color */
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  /* Hover Effect */
+  footer ul li a:hover {
+    color: red; /* Change color to red on hover */
+  }
