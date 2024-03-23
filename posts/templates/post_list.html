@@ -5,8 +5,8 @@
   <h1 class="blog-list-header">Blog List</h1>
   <div class="row">
     {% for post in page_obj %}
-    <div class="col-md-4">
-      <div class="card mb-4 card-transparent"> <!-- Add the card-transparent class here -->
+    <div class="col-md-4"> <!-- Set column width to col-md-4 for even distribution -->
+      <div class="card mb-4 card-transparent">
         <div class="card-body">
           <div class="image-container">
             {% if "placeholder" in post.featured_image.url %}
@@ -24,6 +24,9 @@
         </div>
       </div>
     </div>
+    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+      </div><div class="row">
+    {% endif %}
     {% endfor %}
   </div>
 

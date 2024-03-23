@@ -4,16 +4,17 @@
 <div class="edit-comment-alert alert alert-success" style="display: none;">
   Your comment has been edited successfully!
 </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <h2>Edit Comment</h2>
-        <form method="post" id="comment_edit_form">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit" class="btn btn-primary">Update Comment</button>
-        </form>
-      </div>
+<div class="comment-edit-container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2>Edit Comment</h2>
+      <form method="post" id="comment_edit_form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <!-- Add a custom class to the button for styling -->
+        <button type="submit" class="edit-custom-button">Update Comment</button>
+      </form>
     </div>
   </div>
+</div>
 {% endblock %}

@@ -27,7 +27,7 @@ header {
 }
 
 .landing-image {
-  background-image: url('images/arcade.jpg');
+  background-image: url('images/arcade.webp');
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -57,6 +57,18 @@ nav ul li a {
 nav ul li a.active {
   font-weight: bold;
 }
+
+/* Event Name Hyperlink Styles */
+.image-flash .card-title a {
+  color: #BFCFE0; /* Change the color to your desired color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.image-flash .card-title a:hover {
+  color: #d62700; /* Change the color on hover */
+}
+
+
 
 /* Container Styles */
 .signup-form-text{
@@ -150,7 +162,7 @@ nav ul li a.active {
 
 /* Main Content Styles */
 main {
-  padding-top: 140px; /* Increased padding to accommodate the fixed header and make space for landing page image */
+  padding-top: 110px; /* Increased padding to accommodate the fixed header and make space for landing page image */
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -180,6 +192,56 @@ main {
   margin: 0 auto; /* Center align the container */
   border: none;
 }
+
+.comment-edit-container{
+
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.delete-container {
+
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+}
+/*about me styling */
+.about-me-main-content {
+
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+}
+
+.step-links {
+  color: #BFCFE0;
+}
+/* Button Style */
+.edit-custom-button {
+  /* Add your custom button styles here */
+  background-color: #5d5d81; /* Background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+}
+
+.edit-custom-button:hover {
+  background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+
 
 /* Comments Container Styles */
 .comments-container,
@@ -363,3 +425,12 @@ footer ul li a {
     margin-bottom: 10px;
   }
 }
+  
+/* Additional Media Queries for Tablet and Larger Screens */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* For tablets and larger screens */
+  /* Adjust styles accordingly */
+}
+
+/* Cross-browser Compatibility */
+/* Ensure compatibility by testing on various browsers */
