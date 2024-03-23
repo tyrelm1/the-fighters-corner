@@ -2,64 +2,179 @@
 
 /* Reset CSS */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body Styles */
-  body {
-    font-family: 'Literata', sans-serif;
-    background-color: black;
-    line-height: 1.6;
-    color: #1a1a1a;
-  }
-  
- /* Header Styles */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: 'Literata', sans-serif;
+  background-color: black;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+/* Header Styles */
 header {
-    background-color: rgba(59, 51, 68, 0.8); /* Dark gray background color with slight transparency */
-    color: #BFCFE0; /* Light gray text color */
-    padding: 20px 0; /* Adjusted padding */
-    position: fixed; /* Fix the header position */
-    top: 0; /* Position the header at the top of the viewport */
-    width: 100%; /* Full width */
-    z-index: 1000; /* Ensure the header is above other content */
-  }
-  
-  
-  .landing-image {
-    background-image: url('images/arcade.webp');
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 30vh; /* Adjusted height for smaller screens */
-    z-index: -1;
-  }
-  
-  /* Navigation Styles */
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.landing-image {
+  background-image: url('images/arcade.webp');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  z-index: -1;
+}
+
+/* Navigation Styles */
+nav ul {
+  list-style: none;
+  text-align: right;
+}
+
+nav ul li {
+  display: none;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+}
+
+/* Container Styles */
+.signup-form-text,
+.signup-title,
+.signup-text,
+.logout-container,
+.login-container,
+.blog-list-header,
+.post-list-container,
+.comment-edit-container,
+.delete-container,
+.about-me-main-content,
+.rsvp-form-container,
+.rsvp-container,
+.event-list-header {
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.signup-form-text .custom-button,
+.logout-container .custom-button,
+.login-container .custom-button,
+.edit-custom-button,
+.comment-form-container button {
+  background-color: #5d5d81;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup-form-text .custom-button:hover,
+.logout-container .custom-button:hover,
+.login-container .custom-button:hover,
+.edit-custom-button:hover,
+.comment-form-container button:hover {
+  background-color: green;
+}
+
+/* Main Content Styles */
+main {
+  padding-top: 80px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.main-title {
+  text-align: center;
+  color: #bfcde0;
+  font-family: 'Bowlby One SC', sans-serif;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #3b3444;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: none;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+footer ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Media Query for Mobile Devices (up to 600px) */
+@media only screen and (max-width: 600px) {
   nav ul {
-    list-style: none;
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   nav ul li {
-    display: none; /* Hide navigation links by default */
-    margin-left: 20px;
+    display: block;
+    margin: 10px 0;
   }
-  
-  nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
+
+  .navbar-toggler {
+    display: block;
   }
-  
-  nav ul li a.active {
-    font-weight: bold;
+
+  nav ul {
+    display: none;
   }
-  
-  /* Container Styles */
+
+  nav.active ul {
+    display: block;
+  }
+
+  nav.active ul li {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .landing-image {
+    height: 50vh;
+  }
+
   .signup-form-text,
   .signup-title,
   .signup-text,
@@ -73,231 +188,14 @@ header {
   .rsvp-form-container,
   .rsvp-container,
   .event-list-header {
-    background-color: rgba(59, 51, 68, 0.8);
-    color: #BFCFE0;
-    padding: 15px; /* Adjusted padding for smaller screens */
-    border-radius: 10px;
-    margin-bottom: 20px;
+    padding: 20px;
   }
-  
+
   .signup-form-text .custom-button,
   .logout-container .custom-button,
   .login-container .custom-button,
   .edit-custom-button,
   .comment-form-container button {
-    background-color: #5d5d81;
-    color: white;
-    padding: 8px 15px; /* Adjusted padding for smaller screens */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 10px 20px;
   }
-  
-  .signup-form-text .custom-button:hover,
-  .logout-container .custom-button:hover,
-  .login-container .custom-button:hover,
-  .edit-custom-button:hover,
-  .comment-form-container button:hover {
-    background-color: green;
-  }
-  
-  /* Main Content Styles */
-  main {
-    padding-top: 80px; /* Adjusted padding for smaller screens */
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
-  .main-title {
-    text-align: center;
-    color: #bfcde0;
-    font-family: 'Bowlby One SC', sans-serif;
-  }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #3b3444;
-    color: #ffffff;
-    padding: 15px;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  footer ul {
-    list-style: none;
-  }
-  
-  footer ul li {
-    display: inline;
-    margin-right: 10px;
-  }
-  
-  footer ul li a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  /* Media Queries for Tablets (768px - 1024px) */
-  @media only screen and (min-width: 768px) {
-    /* Adjustments specific to tablets */
-    nav ul li {
-      display: inline-block; /* Display navigation links for tablet screens */
-      margin-left: 30px; /* Increased margin between navigation links */
-    }
-  
-    .main-title {
-      font-size: 28px; /* Increased font size for tablets */
-    }
-  
-    main {
-      padding-top: 100px; /* Adjusted padding for tablets */
-    }
-  
-    .landing-image {
-      height: 50vh; /* Adjusted height for tablets */
-    }
-  
-    .signup-form-text,
-    .signup-title,
-    .signup-text,
-    .logout-container,
-    .login-container,
-    .blog-list-header,
-    .post-list-container,
-    .comment-edit-container,
-    .delete-container,
-    .about-me-main-content,
-    .rsvp-form-container,
-    .rsvp-container,
-    .event-list-header {
-      padding: 20px; /* Increased padding for tablets */
-    }
-  
-    .signup-form-text .custom-button,
-    .logout-container .custom-button,
-    .login-container .custom-button,
-    .edit-custom-button,
-    .comment-form-container button {
-      padding: 10px 20px; /* Increased padding for tablets */
-    }
-  }
-  
-  /* Media Queries for Desktop (1024px and above) */
-  @media only screen and (min-width: 1024px) {
-    /* Adjustments specific to desktop screens */
-    .landing-image {
-      height: 60vh; /* Adjusted height for desktop */
-    }
-  
-    .signup-form-text,
-    .signup-title,
-    .signup-text,
-    .logout-container,
-    .login-container,
-    .blog-list-header,
-    .post-list-container,
-    .comment-edit-container,
-    .delete-container,
-    .about-me-main-content,
-    .rsvp-form-container,
-    .rsvp-container,
-    .event-list-header {
-      padding: 25px; /* Increased padding for desktop */
-    }
-  
-    .signup-form-text .custom-button,
-    .logout-container .custom-button,
-    .login-container .custom-button,
-    .edit-custom-button,
-    .comment-form-container button {
-      padding: 12px 25px; /* Increased padding for desktop */
-    }
-  }
-
-  /* Media Query for Mobile Devices (up to 600px) */
-@media only screen and (max-width: 600px) {
-    nav ul {
-      display: flex; /* Change display to flex for better mobile layout */
-      flex-direction: column; /* Stack navigation links vertically */
-      align-items: center; /* Center-align navigation links */
-    }
-  
-    nav ul li {
-      display: block; /* Display navigation links as block for better stacking */
-      margin: 10px 0; /* Add margin between navigation links */
-    }
-    .navbar-toggler {
-        display: block; /* Show the hamburger button on small screens */
-      }
-    
-      nav ul {
-        display: none; /* Hide the navigation links by default on small screens */
-      }
-    
-      nav.active ul {
-        display: block; /* Show the navigation links when the navbar is active */
-      }
-    }
-
-    /* CSS Styling */
-.navbar-toggler {
-    display: none; /* Initially hide the hamburger button */
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  
-  nav ul li {
-    display: inline-block; /* Display navigation links horizontally */
-    margin-right: 20px; /* Add margin between navigation links */
-  }
-  
-  @media only screen and (max-width: 600px) {
-    /* Media query for mobile devices */
-    .navbar-toggler {
-      display: block; /* Show the hamburger button on small screens */
-    }
-  
-    nav ul {
-      display: none; /* Hide the navigation links by default on small screens */
-      flex-direction: column; /* Display navigation links vertically on small screens */
-    }
-  
-    nav.active ul {
-      display: flex; /* Show the navigation links when the navbar is active */
-    }
-  
-    nav.active ul li {
-      display: block; /* Display navigation links vertically when navbar is active */
-      margin-right: 0; /* Remove margin between navigation links */
-      margin-bottom: 10px; /* Add margin between navigation links vertically */
-    
-    }
-  }
-  
-  /* Footer Styles */
-footer {
-    background-color: #3b3444; /* Dark purple background color */
-    color: #ffffff; /* White text color */
-    padding: 20px;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    display: none; /* Initially hide the footer */
-  }
-  
-  @media only screen and (min-height: 768px) {
-    footer {
-      display: block; /* Show the footer when the screen height is at least 768px */
-    }
-  }
-  
+}
