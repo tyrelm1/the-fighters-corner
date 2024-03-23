@@ -1,43 +1,457 @@
-/* custom.css */
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  color: #BFCFE0;
+}
+/* Body Styles */
+body {
+  font-family: 'Literata', sans-serif; /* Use Literata for generic text */
+  background-color: black; /* Light gray background color */
+  line-height: 1.6;
+  color: #BFCFE0
+}
 
 /* Header Styles */
-.header {
-  background-image: url('static/images/arcade.jpg'); /* Replace 'path/to/your/image.jpg' with the path to your image */
-  background-size: cover;
-  background-position: center;
+header {
+  background-color: rgba(59, 51, 68, 0.8); /* Dark gray background color with slight transparency */
+  color: #BFCFE0; /* Light gray text color */
+  padding: 20px 0; /* Adjusted padding */
   position: fixed;
   width: 100%;
   z-index: 1000;
-  padding: 20px 0; /* Adjust padding as needed */
-  opacity: 0.9; /* Adjust opacity to make the header slightly transparent */
 }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px; /* Adjust padding as needed */
+.landing-image {
+  background-image: url('images/arcade.webp');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  z-index: -1;
 }
 
-.header h1 {
-  color: white; /* Set header text color */
-  font-size: 24px; /* Adjust header font size */
-}
-
-.navbar ul {
+nav ul {
   list-style: none;
+  text-align: right; /* Right-align the navigation links */
 }
 
-.navbar ul li {
+nav ul li {
   display: inline-block;
   margin-left: 20px;
 }
 
-.navbar ul li a {
-  color: white; /* Set link color */
+nav ul li a {
+  color: #ffffff; /* White text color */
   text-decoration: none;
 }
 
-.navbar ul li a.active {
+nav ul li a.active {
   font-weight: bold;
 }
+
+
+
+
+/* Event Name Hyperlink Styles */
+.image-flash .card-title a {
+  color: #BFCFE0; /* Change the color to your desired color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.image-flash .card-title a:hover {
+  color: #d62700; /* Change the color on hover */
+}
+
+
+
+/* Container Styles */
+.signup-form-text{
+
+  color: #BFCFE0;
+  background-color: rgba(59, 51, 68, 1.0); /* Slightly transparent dark purple background color */
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Add rounded corners for better aesthetics */
+  margin:inherit;
+
+}
+
+.signup-title {
+  background-color: rgba(59, 51, 68, 1.0);
+  color:#BFCFE0;
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Add rounded corners for better aesthetics */
+  margin:inherit;
+
+}
+
+.signup-text {
+  background-color: rgba(59, 51, 68, 1.0);
+  color:#BFCFE0;
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Add rounded corners for better aesthetics */
+  margin-bottom: 20px; /* Add margin to separate containers */
+}
+
+.signup-form-text .custom-button {
+  background-color: #5d5d81; /* Background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+}
+
+.signup-form-text .custom-button:hover {
+  background-color: green; /* Change background color on hover */
+}
+
+/*logout form styles*/
+.logout-container{
+
+  background-color: rgba(59, 51, 68, 1.0);
+  color:#BFCFE0;
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Add rounded corners for better aesthetics */
+  margin-bottom: 20px; /* Add margin to separate containers */
+}
+/* Custom button style for logout form */
+.logout-container .custom-button {
+  background-color: #5d5d81; /* Background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+}
+
+.logout-container .custom-button:hover {
+  background-color: green; /* Change background color on hover */
+}
+
+/*login form styles*/
+
+.login-container{
+
+  background-color: rgba(59, 51, 68, 1.0);
+  color:#BFCFE0;
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Add rounded corners for better aesthetics */
+  margin-bottom: 20px; /* Add margin to separate containers */
+}
+
+/* Custom button style for login form */
+.login-container .custom-button {
+  background-color: #5d5d81; /* Background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+}
+
+.login-container .custom-button:hover {
+  background-color: green; /* Change background color on hover */
+}
+
+
+/* Main Content Styles */
+/* Main Content Styles */
+main {
+  padding-top: 110px; /* Increased padding to accommodate the fixed header and make space for landing page image */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 70px; /* Adjusted padding to accommodate the fixed footer */
+}
+
+
+.main-title {
+  text-align: center;
+  color:#bfcde0; /* Dark purple text color */
+  font-family: 'Bowlby One SC', sans-serif; /* Use Bowlby One SC for titles */
+}
+
+/*postlist container styles*/
+.blog-list-header {
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.post-list-container {
+  background-color: rgba(59, 51, 68, 0.); /* White background color */
+  padding: 30px;
+  border-radius: 10px; /* Add rounded corners for better aesthetics */
+  margin-bottom: 100px; /* Add some margin between containers */
+  max-width: 900px; /* Adjust the max-width as per your preference */
+  margin: 0 auto; /* Center align the container */
+  border: none;
+}
+
+.comment-edit-container{
+
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.delete-container {
+
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+}
+/*about me styling */
+.about-me-main-content {
+
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+}
+
+.step-links {
+  color: #BFCFE0;
+}
+/* Button Style */
+.edit-custom-button {
+  /* Add your custom button styles here */
+  background-color: #5d5d81; /* Background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+}
+
+.edit-custom-button:hover {
+  background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+
+
+/* Comments Container Styles */
+.comments-container,
+.post-detail-container  {
+  background-color: rgba(59, 51, 68, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.post-detail-container p {
+  color: #BFCFE0;
+}
+
+.comments-container h2,
+.post-detail-container h1  {
+  color: #BFCFE0;
+}
+
+/* Comments Section Styles */
+.comments-section {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.comments-section h2 {
+  color: #BFCFE0;
+}
+
+.comment {
+  margin-bottom: 20px;
+}
+
+.comment-author {
+  font-weight: bold;
+}
+
+.comment-body {
+  margin-top: 5px;
+}
+
+.list-unstyled {
+  color: #BFCFE0;
+}
+
+.no-comments-message{
+color: #BFCFE0;
+}
+
+/* Comment Form Container Styles */
+.comment-form-container {
+  background-color: rgba(59, 51, 68, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.comment-form-container h2 {
+  color: #BFCFE0;
+}
+
+.comment-form-container form {
+  max-width: 100%; /* Adjust as needed */
+}
+
+.comment-form-container label {
+  margin-bottom: 10px;
+  color: #BFCFE0;
+}
+
+.comment-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fefcfd;
+  border-radius: 5px;
+}
+
+.comment-form-container button {
+  padding: 10px 20px;
+  background-color:  #5d5d81;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-form-container button:hover {
+  background-color: green
+}
+
+
+.card-transparent {
+  background-color: rgba(59, 51, 68, 0.8); /* Slightly transparent dark purple background color */
+}
+
+.card{
+  background-color: rgba(59, 51, 68, 0.8);
+}
+
+.card-title {
+  color: #BFCFE0; /* White text color */
+  background-color: rgba(59, 51, 68, 0.8);
+}
+
+.card-body {
+border:none
+}
+
+/* Blog List Styles */
+.post-list-container a {
+  color: #bfcde0; /* Change the hyperlink color to orange */
+  text-decoration: none; /* Remove underline from hyperlinks */
+}
+
+.post-list-container a:hover {
+  color: red; /* Change the hyperlink color on hover */
+}
+
+/*event styling*/
+.rsvp-form-container{
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.rsvp-container {
+
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.event-list-header
+{
+  background-color: rgba(59, 51, 68, 0.8);
+  color: #BFCFE0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Footer Styles */
+
+  /* Footer Styles */
+  footer {
+    background-color: rgba(59, 51, 68, 0.5); /* Dark purple background color */
+    color: #ffffff; /* White text color */
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer .social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; /* Horizontally center the icons */
+  }
+
+  footer .social-icons li {
+    margin-right: 10px; /* Adjust spacing between icons */
+  }
+
+  footer .social-icons li:last-child {
+    margin-right: 0; /* Remove margin from the last icon */
+  }
+
+  footer .social-icons li a {
+    color: #ffffff; /* White text color */
+    text-decoration: none;
+    font-size: 24px; /* Adjust icon size */
+  }
+
+
+  /* Social Icons Styles */
+  footer ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  footer ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  footer ul li a {
+    color: #ffffff; /* White text color */
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  /* Hover Effect */
+  footer ul li a:hover {
+    color: red; /* Change color to red on hover */
+  }
