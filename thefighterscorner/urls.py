@@ -1,6 +1,7 @@
 from django.contrib import admin  # Import admin module
-
 from django.urls import path, include
+from django.conf.urls import handler404  # Import handler404 function
+from django.shortcuts import render
 from posts.views import (
     PostListView, PostDetailView, PostCreateView,
     PostUpdateView, PostDeleteView, add_comment,
@@ -8,6 +9,10 @@ from posts.views import (
 )
 from accounts.views import signup_view 
 from events.views import event_list, event_detail  # Import views from the events app
+
+# Define the handler404 view
+def custom_page_not_found_view(request, exception):
+    return render(request, '404.html', status=404)
 
 urlpatterns = [
     path("about/", include("about.urls"), name="about-urls"),
@@ -19,3 +24,5 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),  
     path('events/', include('events.urls')),  
 ]
+
+handler404 = 'thefighterscorner.urls.custom_page_not_found_view'
