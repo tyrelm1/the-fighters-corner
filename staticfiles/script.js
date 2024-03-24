@@ -1,79 +1,78 @@
-//signup form submission//
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("signup-form").addEventListener("submit", function(event) {
-        var password1 = document.getElementById("id_password1").value;
-        var password2 = document.getElementById("id_password2").value;
+    // Signup form submission
+    var signupForm = document.getElementById("signup-form");
+    if (signupForm) {
+        signupForm.addEventListener("submit", handleSignupFormSubmit);
+    }
 
-        if (password1.length < 8 || password2.length < 8) {
-            event.preventDefault(); // Prevent form submission
-            document.getElementById("password-requirements").style.display = "block"; // Show password requirements message
-        }
-    });
-});
-
-// Function to display alert message
-function showAlert() {
-    alert('Your RSVP has been confirmed!');
-}
-
-// Add event listener to the form submission
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the RSVP form
-    var rsvpForm = document.getElementById('rsvpForm');
+    // Add event listener to the RSVP form
+    var rsvpForm = document.getElementById("rsvpForm");
     if (rsvpForm) {
-        // If the RSVP form exists, add an event listener to it
-        rsvpForm.addEventListener('submit', function() {
-            showAlert();  // Call the showAlert function when the form is submitted
-        });
+        rsvpForm.addEventListener("submit", handleRsvpFormSubmit);
     }
+
+    // Add event listeners for comment edit and delete forms
+    addCommentFormEventListener("comment_edit_form", "edited");
+    addCommentFormEventListener("comment_delete_form", "deleted");
+
+    // Toggle navigation links visibility
+    var navbarToggler = document.querySelector(".navbar-toggler");
+    var nav = document.querySelector("nav");
+    if (navbarToggler && nav) {
+        navbarToggler.addEventListener("click", toggleNavLinksVisibility);
+    }
+
+    // Show footer when user scrolls to the bottom
+    window.addEventListener("scroll", showFooterOnScroll);
 });
 
-// Function to display alert message for comment actions
-function showCommentAlert(action) {
-    alert('Your comment has been ' + action + ' successfully!');
+function handleSignupFormSubmit(event) {
+    var password1 = document.getElementById("id_password1").value;
+    var password2 = document.getElementById("id_password2").value;
+
+    if (password1.length < 8 || password2.length < 8) {
+        event.preventDefault(); // Prevent form submission
+        document.getElementById("password-requirements").style.display = "block"; // Show password requirements message
+    }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Add event listener for comment edit form submission
-    var commentEditForm = document.getElementById('comment_edit_form');
-    if (commentEditForm) {
-        commentEditForm.addEventListener('submit', function() {
-            showCommentAlert('edited'); // Call showCommentAlert function when the form is submitted
+function handleRsvpFormSubmit() {
+    showAlert("Your RSVP has been confirmed!");
+}
+
+function addCommentFormEventListener(formId, action) {
+    var commentForm = document.getElementById(formId);
+    if (commentForm) {
+        commentForm.addEventListener("submit", function() {
+            showCommentAlert(action);
         });
     }
+}
 
-    // Add event listener for comment delete form submission
-    var commentDeleteForm = document.getElementById('comment_delete_form');
-    if (commentDeleteForm) {
-        commentDeleteForm.addEventListener('submit', function() {
-            showCommentAlert('deleted'); // Call showCommentAlert function when the form is submitted
-        });
+function showAlert(message) {
+    alert(message);
+}
+
+function showCommentAlert(action) {
+    alert("Your comment has been " + action + " successfully!");
+}
+
+function toggleNavLinksVisibility() {
+    var nav = document.querySelector("nav");
+    if (nav) {
+        nav.classList.toggle("active");
     }
-});
+}
 
-// JavaScript for toggling navigation links
-document.addEventListener('DOMContentLoaded', function() {
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const nav = document.querySelector('nav');
-  
-    // Toggle navigation links visibility when the hamburger button is clicked
-    navbarToggler.addEventListener('click', function() {
-      nav.classList.toggle('active');
-    });
-  });
-  
- 
-// JavaScript to show footer when user scrolls to the bottom
-window.addEventListener("scroll", function() {
+function showFooterOnScroll() {
     var footer = document.getElementById("site-footer");
     var scrollPosition = window.innerHeight + window.pageYOffset;
     var documentHeight = document.body.offsetHeight;
-  
+
     // Show footer when user scrolls to the bottom
     if (scrollPosition >= documentHeight) {
-      footer.style.display = "block";
+        footer.style.display = "block";
     } else {
-      footer.style.display = "none";
+        footer.style.display = "none";
     }
-  });
-  
+}

@@ -1,11 +1,11 @@
-/* Reset CSS */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body Styles */
+
 body {
   font-family: 'Literata', sans-serif;
   background-color: darkgray;
@@ -13,7 +13,7 @@ body {
   color: #BFCFE0;
 }
 
-/* Header Styles */
+
 header {
   background-color: rgba(59, 51, 68, 0.8);
   color: #BFCFE0;
@@ -35,7 +35,7 @@ header {
   z-index: -1;
 }
 
-/* Navigation Styles */
+
 nav ul {
   list-style: none;
   text-align: right;
@@ -55,7 +55,7 @@ nav ul li a.active {
   font-weight: bold;
 }
 
-/* Container Styles */
+
 .container-404 {
   background-color: rgba(59, 51, 68, 1.0);
   color: #BFCFE0;
@@ -105,7 +105,7 @@ nav ul li a.active {
   background-color: green;
 }
 
-/* Main Content Styles */
+
 main {
   padding-top: 110px;
   padding-left: 20px;
@@ -119,7 +119,7 @@ main {
   font-family: 'Bowlby One SC', sans-serif;
 }
 
-/* Footer Styles */
+
 footer {
   background-color: rgba(59, 51, 68, 0.5);
   color: #ffffff;
@@ -131,9 +131,10 @@ footer {
   width: 100%;
 }
 
-/* Add styles for larger screens (desktop) */
+
 .about-container {
-  display: flex; /* Use flexbox for layout */
+  display: flex;
+ 
 }
 
 .img.about-image {
@@ -141,13 +142,28 @@ footer {
   justify-content: left;
   width: -webkit-fill-available;
 }
-img { padding: 10px;
+
+img {
+  padding: 10px;
   justify-content: left;
-  width: -webkit-fill-available;}
+  width: -webkit-fill-available;
+}
 
 .about-article {
-  flex: 1; /* Allow the article to expand to fill the remaining space */
+  flex: 1;
+  
 }
 
 
-
+@media (min-width: 768px) {
+  .about-container {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .about-me-image {
+    max-width: 100%; 
+    height: auto;
+  }
+  
+}
