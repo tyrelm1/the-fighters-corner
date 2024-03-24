@@ -130,3 +130,24 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+/* Add styles for larger screens (desktop) */
+.about-container {
+  display: flex; /* Use flexbox for layout */
+}
+
+.img.about-image {
+  padding: 10px;
+  justify-content: left;
+  width: -webkit-fill-available;
+}
+img { padding: 10px;
+  justify-content: left;
+  width: -webkit-fill-available;}
+
+.about-article {
+  flex: 1; /* Allow the article to expand to fill the remaining space */
+}
+
+
+

@@ -7,10 +7,10 @@
     <div class="col-md-4">
       <div class="about-container"> <!-- Container for the image -->
         {% if "placeholder" in about.profile_image.url %}
-        <img src="{% static 'images/aboutme.webp' %}" width="100%"
-          alt="placeholder image" >
+        <img class="about-me-image" src="/static/images/aboutme.webp" alt="about-me-image">
+
         {% else %}
-        <img src="{{ about.profile_image.url }}" width="100%"
+        <img src="{{ about.profile_image.url }}"
           alt="{{ about.title }}">
         {% endif %}
       </div>
