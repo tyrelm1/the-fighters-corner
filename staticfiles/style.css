@@ -189,7 +189,7 @@ main {
 }
 
 .post-list-container {
-  background-color: rgba(59, 51, 68, 0.); /* White background color */
+  background-color: rgba(59, 51, 68, 0.6); /* White background color */
   padding: 30px;
   border-radius: 10px; /* Add rounded corners for better aesthetics */
   margin-bottom: 100px; /* Add some margin between containers */
