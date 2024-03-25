@@ -11,7 +11,7 @@
           <div class="card" style="width: 100%;">
             <div class="image-container">
               {% if "placeholder" in event.featured_image.url %}
-              <img class="card-img-top" src="{% static 'images/nights.webp' %}"
+              <img class="card-img-top" src="{% static 'images/arcadestick.webp' %}"
                 alt="placeholder image">
               {% else %}
               <img class="card-img-top" src=" {{ event.featured_image.url }}"
@@ -37,6 +37,8 @@
             </div>
           </div>
         </div>
+        <!-- Preload the featured image for each event -->
+        <link rel="preload" href="{{ event.featured_image.url }}" as="image">
       {% endfor %}
     {% else %}
       <div class="col-md-12">
