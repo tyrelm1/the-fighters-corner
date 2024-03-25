@@ -546,23 +546,30 @@ All JS files were run through JS Hint. No errors were detected.
 
 ![sign out lighthouse](https://github.com/tyrelm1/the-fighters-corner-test/assets/153202154/c6daa41c-bd7d-4ed0-9940-a4856e9043d1)
 
-**Sign Up Page Sign In Page*
+**Sign Up Page Sign In Page**
 
 ![sign up light house](https://github.com/tyrelm1/the-fighters-corner-test/assets/153202154/7a441ba7-747c-4c01-9bc4-c8ae56291ed9)
 
 **Mobile Now**
 
+
 **mobile Sign in menu**
+
+
 ![mobile sign in](https://github.com/tyrelm1/the-fighters-corner-test/assets/153202154/545ca1ca-7f87-463e-aa88-cfa1ae61c0e6)
 
-**Assessed both post and event detail for mobile**
+**Assessed both post and event details for mobile**
 
 ![event and post detail mobile](https://github.com/tyrelm1/the-fighters-corner-test/assets/153202154/bf589e1c-11d2-4c12-9ccf-8ae4f1499f46)
 
 **Mobile Aboout Page**
+
+
 ![event list and blog list mobile](https://github.com/tyrelm1/the-fighters-corner-test/assets/153202154/ce52c6bf-ab02-42e1-9826-8261468d381c)
 
-** About Me Mobile **
+**About Me Mobile**
+
+
 ![about mobile](https://github.com/tyrelm1/the-fighters-corner-test/assets/153202154/f90ba3df-cb3e-4767-a0a0-bcc20376fbde)
 
 
@@ -597,7 +604,7 @@ All JS files were run through JS Hint. No errors were detected.
 
 
 
-[Back to the Top](#help-u-website-milestone-project-4)
+
 ___
 
 # Deployment
@@ -624,35 +631,23 @@ ___
     3. Select the region and choose the nearest data centre to your location or the one that works. The closest to me was down when I was creating mine.
     4. Click 'review' and check the details and click the button to create the instance.
     5. Click on the instance you created copy the ElephantSQL database URL from the instance details and paste it into your config vars `DATABASE_URL` = `postgres://<your_value>`
-____
-  * 1. Create an email account on [GMail](https://google.com) or anywhere you like, log in.
-
-    2. Create an account on [Sendinblue](https://sendinblue.com), fill out necessary fields to start. Choose a free plan. Skip onboarding.
-
-    3. Go to `Settings`, chose `Senders and IP`, and edit a sender - name it. Navigate to `SMTP & API` in the menu on the left, and paste:
-        -  SMTP Server value into your config vars as `EMAIL_HOST`,
-        -  Port value as `EMAIL_PORT`,
-        -  Login value as `EMAIL_HOST_USER`,
-        -  Master Password as `EMAIL_HOST_PASSWORD`.
-____
- 
-4. Add Django secret key to config vars `SECRET_KEY` and `DISABLE_COLLECT_STATIC` = 1
-6. Navigate to the `Deploy` tab and select GitHub as a deployment method.
-7. Find a repository to connect to and choose the branch to deploy.
-8. Enable automatic deployment, cross your fingers and deploy the branch. 
-9. Wait for the app to build, click on `View`.
-10. Go back to config vars and remove `DISABLE_COLLECT_STATIC` = 1
-
+    4. Add Django secret key to config vars `SECRET_KEY` and `DISABLE_COLLECT_STATIC` = 1
+    6. Navigate to the `Deploy` tab and select GitHub as a deployment method.
+    7. Find a repository to connect to and choose the branch to deploy.
+    8. Enable automatic deployment, cross your fingers and deploy the branch. 
+    9. Wait for the app to build, click on `View`.
+    10. Go back to config vars and remove `DISABLE_COLLECT_STATIC` = 1
+    
 ### Fork GitHub Repo
 
 Forking in GitHub allows you to create a copy of a repository on your own account, where you can view or make changes without affecting the original repository. To fork a repository, you can follow these steps:
 
-1. Navigate to the [repository](https://github.com/tyrelm1/the-fighters-corner-test) on GitHub.
-2. Click the "Fork" button, located on the top right of the page.
-3. Choose the account where you want to fork the repository.
-4. Once the process is completed, you will have a copy of the repository on your own account.
+    1. Navigate to the [repository](https://github.com/tyrelm1/the-fighters-corner-test) on GitHub.
+    2. Click the "Fork" button, located on the top right of the page.
+    3. Choose the account where you want to fork the repository.
+    4. Once the process is completed, you will have a copy of the repository on your own account.
 
-It's important to keep in mind that if you are not a member of an organization on GitHub, you will not be able to fork your own repository. You might want to create another account to do so.
+    It's important to keep in mind that if you are not a member of an organization on GitHub, you will not be able to fork your own repository. You might want to create another account to do so.
 
 ### Clone GitHub Repo
 
@@ -679,7 +674,7 @@ ___
 
 **heavily Inspired By This Blog**
 
-![](https://fightrise.com/blog/)
+[](https://fightrise.com/)
 
  
 ## Acknowledgements
