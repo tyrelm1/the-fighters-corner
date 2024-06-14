@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['8000-tyrelm1-thefighterscorn-82mhgb8lggu.ws-eu110.gitpod.io','.herokuapp.com']
+ALLOWED_HOSTS = ['8000-tyrelm1-thefighterscorn-5d6gd2okzoz.ws-eu114.gitpod.io','.herokuapp.com']
 
-CSRF_TRUSTED_ORIGINS = [ "https://*.8000-tyrelm1-thefighterscorn-82mhgb8lggu.ws-eu110.gitpod.io","https://*.herokuapp.com"]
+CSRF_TRUSTED_ORIGINS = [ "https://*.8000-tyrelm1-thefighterscorn-5d6gd2okzoz.ws-eu114.gitpod.io","https://*.herokuapp.com"]
 
 # Application definition
 
