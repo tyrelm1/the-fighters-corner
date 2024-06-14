@@ -1,15 +1,12 @@
 from django.contrib import messages
 from django.urls import reverse_lazy
-from .models import Post, Comment
-from .forms import CommentForm
-from django.core.paginator import Paginator
 from django.shortcuts import redirect, get_object_or_404, render
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator  # Add this import
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Comment
 from .forms import CommentForm
 from django.core.paginator import Paginator
-
 
 class PostListView(ListView):
     model = Post
@@ -36,17 +33,29 @@ class PostCreateView(CreateView):
     template_name = "post_form.html"
     fields = ['title', 'content']
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
 
 class PostUpdateView(UpdateView):
     model = Post
     template_name = "post_form.html"
     fields = ['title', 'content']
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
 
 class PostDeleteView(DeleteView):
     model = Post
     template_name = "post_confirm_delete.html"
     success_url = reverse_lazy('post_list')
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
 
 @login_required
@@ -73,7 +82,7 @@ def comment_edit(request, pk):
         form = CommentForm(request.POST, instance=comment)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your comment has been edited !')
+            messages.success(request, 'Your comment has been edited!')
             return redirect('post_detail', pk=comment.post.pk)
     else:
         form = CommentForm(instance=comment)
@@ -86,6 +95,6 @@ def comment_delete(request, pk):
     post_pk = comment.post.pk
     if request.method == 'POST':
         comment.delete()
-        messages.success(request, 'Your comment has been deleted !')
+        messages.success(request, 'Your comment has been deleted!')
         return redirect('post_detail', pk=post_pk)
     return render(request, 'comment_delete.html', {'comment': comment})

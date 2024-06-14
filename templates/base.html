@@ -20,7 +20,7 @@
   <link rel="preload" href="{% static 'images/arcade.webp' %}" as="image">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   <style>
-  /* Additional styles here */
+    /* Additional styles here */
   </style>
 </head>
 
@@ -48,7 +48,7 @@
           </li>
           {% endif %}
           <li class="nav-item">
-            <span class="nav-link">{% if user.is_authenticated %} You are logged in {% else %} You are not logged in {% endif %}</span>
+            <span class="nav-link">{% if user.is_authenticated %}Logged in as {{ user.username }}{% else %}Not logged in{% endif %}</span>
           </li>
         </ul>
       </nav>
@@ -73,35 +73,41 @@
       </ul>
     </div>
   </footer>
+
   <script src="{% static 'script.js' %}" async></script>
   <script src="https://kit.fontawesome.com/fdd73ab055.js" crossorigin="anonymous" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script>
-    toastr.options = {
-      "closeButton": true,
-      "debug": false,
-      "newestOnTop": false,
-      "progressBar": true,
-      "positionClass": "toast-top-right",
-      "preventDuplicates": false,
-      "onclick": null,
-      "showDuration": "300",
-      "hideDuration": "1000",
-      "timeOut": "5000",
-      "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
-    };
+ 
+      document.addEventListener("DOMContentLoaded", function() {
+      toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      };
 
-    {% if messages %}
+      {% if messages %}
       {% for message in messages %}
-        toastr["{{ message.tags }}"]("{{ message|escapejs }}");
+      toastr["{{ message.tags|default:'info' }}"]("{{ message|escapejs }}");
       {% endfor %}
-    {% endif %}
-  </script>
+      {% endif %}
+    });
+      
+</script>
+
 </body>
 
 </html>
